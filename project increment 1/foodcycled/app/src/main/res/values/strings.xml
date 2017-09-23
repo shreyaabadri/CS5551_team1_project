@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Food-cycled</string>
+    <string name="action_settings">Settings</string>
+    <string name="tag_line">Plenty given to the Needy</string>
+    <string name="login_btn">LOGIN</string>
+    <string name="reg_btn">REGISTER</string>
+    <string name="facebook_app_id">130251484289556</string>
+    <string name="fb_login_protocol_scheme">fb130251484289556</string>
+    <string name="reg_user">Have plenty ?? Would you like to donate ?.. </string>
+    <string name="reg_volun">Join us in making a difference..</string>
+    <string name="volun">VOLUNTEER REGISTRATION</string>
+    <string name="reg_heading">Register here...</string>
+    <string name="name">Name</string>
+    <string name="pwd">Password</string>
+    <string name="ea">Email Address</string>
+    <string name="id">ID</string>
+    <string name="phno">Phone Number</string>
+    <string name="add">Address</string>
+    <string name="imgup">TAKE PHOTO</string>
+    <string name="out">LOGOUT</string>
+</resources>
