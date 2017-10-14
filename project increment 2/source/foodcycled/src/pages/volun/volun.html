@@ -1,0 +1,26 @@
+<!--
+  Generated template for the VolunPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>VOLUNTEER</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="bg-vol-image">
+    <div padding>
+        <p style="text-align: center; color: blue; font-family: sans-serif; font-size: 26px">Welcome!</p>
+        <br>
+    <p style="text-align: left; color: black; font-family: sans-serif; font-size: 18px">Please Login here..</p>    
+    <button block ion-button [navPush]="vlpage" item-left>LOGIN</button>   
+    <p style="text-align: left; color: black; font-family: sans-serif; font-size: 18px">Not yet registered? Would you like to make a difference?</p>
+         <button block ion-button [navPush]="vrpage" item-left>REGISTER</button>
+        <br>
+        <br>
+    <p style="text-align: center; color: green; font-family: sans-serif; font-size: 20px">Thank you for your service</p>
+          <button block ion-button color="secondary" [navPush]="homepage" item-left>CANCEL</button>
+    </div>
+</ion-content>
