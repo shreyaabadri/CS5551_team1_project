@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-navbar hideBackButton color="dark">
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Volunteer Dashboard</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="bg-vm-image">
+	<!-- <ion-segment  class="SwipedTabs-tabs"  >
+		<ion-segment-button *ngFor='let tab of ["NOTIFICATIONS","HISTORY","PROFILE"] ; let i = index ' value="IngoreMe" (click)="selectTab(i)" 
+		[ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider  && ( this.SwipedTabsSlider.getActiveIndex() === i || (  tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }' > 
+			{{tab}}  
+		</ion-segment-button>
+	</ion-segment> -->
+
+  <ion-content class='has-heading'>
+  <ion-segment [(ngModel)]="relationship" color="primary">
+    <ion-segment-button  *ngFor='let tab of tabs ; let i = index ' value="{{tab}}" [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider  && ( this.SwipedTabsSlider.getActiveIndex() === i || (  tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }' (ionSelect)="onChange($event)">{{tab}}
+    </ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="relationship">
+       <ion-list *ngSwitchCase="'Notification'">
+             
+       </ion-list>
+       <ion-list *ngSwitchCase="'History'" onload="amar()">
+            <button ion-button icon-start>
+			  <ion-icon name="notifications">
+			  	Left Icon
+			  </ion-icon>
+			</button>
+       </ion-list>
+       <ion-list *ngSwitchCase="'Profile'">
+            <ion-item *ngIf='user_data'>
+            	Name
+                    <ion-note item-right>
+                      {{user_data['name']}}
+                    </ion-note>
+            </ion-item>
+            <ion-item *ngIf='user_data'>
+            	<ion-icon name="md-mail"></ion-icon>
+                    <ion-note item-right>
+                      {{user_data['email']}}
+                    </ion-note>
+            </ion-item>
+            <ion-item *ngIf='user_data'>
+				<ion-icon name="md-call"></ion-icon>
+                    <ion-note item-right>
+                      {{user_data['phone']}}
+                    </ion-note>
+            </ion-item>
+            <ion-item *ngIf='user_data'>
+            	<ion-icon name="md-home"></ion-icon>
+                    <ion-note item-right>
+                      {{user_data['address']}}
+                    </ion-note>
+            </ion-item>
+			<ion-item *ngIf='user_data'>
+            	House
+                    <ion-note item-right>
+                      {{user_data['house']}}
+                    </ion-note>
+            </ion-item>
+
+       </ion-list>
+</div>
+</ion-content>
+
+	<!-- here is our dynamic line  "indicator"-->
+	<div id='indicator' class="SwipedTabs-indicatorSegment" ></div>
+
+<!-- 	<ion-slides #SwipedTabsSlider  (ionSlideDrag)="animateIndicator($event)"
+							(ionSlideWillChange)="updateIndicatorPosition()" 
+							(ionSlideDidChange)="updateIndicatorPosition()" 
+							(pan)="updateIndicatorPosition()"
+							[pager]="false"
+				>
+		<ion-slide>
+			<h1>NOTIFICATIONS </h1>
+		</ion-slide>
+		<ion-slide>
+			<h1>HISTORY </h1>
+		</ion-slide>
+		<ion-slide>
+			<h1>PROFILE</h1>
+		</ion-slide>
+		
+	</ion-slides> -->
+<button block ion-button [navPush]="hompage" color="secondary" item-left>BACK TO HOME</button>
+
+</ion-content>

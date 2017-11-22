@@ -1,0 +1,83 @@
+<!-- 
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-header>
+  <ion-navbar hideBackButton color="dark">
+      <button ion-button  menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>REGISTER</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- 
+<ion-content padding class="bg-register-image">
+     <ion-list>
+     <ion-item>
+        <ion-label floating>Name</ion-label>
+        <ion-input type="text" ></ion-input></ion-item>
+        <ion-item>
+        <ion-label floating>Email Address</ion-label>
+        <ion-input type="text" #username></ion-input></ion-item>
+        <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" #password></ion-input></ion-item>
+        <ion-item>
+         <ion-label floating>Phone Number</ion-label>
+        <ion-input type="text" ></ion-input></ion-item>
+        <ion-item>
+         <ion-label floating>Address</ion-label>
+        <ion-input type="text" ></ion-input></ion-item>
+        <ion-item>
+         <ion-label floating>Apt/Suite/Unit</ion-label>
+        <ion-input type="text" ></ion-input></ion-item>
+         <ion-item>
+         <ion-label floating>Postal Code</ion-label>
+        <ion-input type="text" ></ion-input></ion-item>
+    </ion-list>
+    <div padding>
+    <button block ion-button (click)="registerUser()" item-left>REGISTER</button>
+      <button block ion-button color="secondary" [navPush]="homepage" item-left>CANCEL</button>
+    </div>
+</ion-content>
+ -->
+<ion-content class='has-header'>
+  <form [formGroup]="todo" (submit)="registerUser()" padding class="bg-register-image">
+      <ion-list>
+        <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input type="email" formControlName="emaill"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type="email" formControlName="passwordd"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Phone</ion-label>
+          <ion-input type='text' formControlName="phone"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Address</ion-label>
+          <ion-input type='text' formControlName="address"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>House Number</ion-label>
+          <ion-input type='text' formControlName="house"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Zipcode</ion-label>
+          <ion-input type='text' formControlName="code"></ion-input>
+        </ion-item>
+      </ion-list>
+      <button ion-button block position="bottom" type="submit" item-left [disabled]="!todo.valid">Submit</button>
+      <!-- <button block ion-button color="secondary" [navPush]="homepage" item-left>CANCEL</button> -->
+
+  </form>
+</ion-content>

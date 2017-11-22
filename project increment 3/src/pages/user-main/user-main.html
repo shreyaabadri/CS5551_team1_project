@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar color="dark">
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>FOOD-CYCLED</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-header>
+  <ion-navbar color="dark">
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>FOOD-CYCLED</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="bg-um-image">
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Name</ion-label>
+      <ion-select [(ngModel)]="title" okText="Go Ahead" cancelText="Aiyoo">>
+        <ion-option *ngFor="let key of names" value="{{key.title}}">{{key.title}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+     <ion-label floating>Cuisine</ion-label>
+      <ion-select [(ngModel)]="cuisine">
+        <ion-option *ngFor="let key of cuisine_names" value="{{key.title}}">{{key.title}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+     <ion-label floating>Preparation Date</ion-label>
+    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="prep_date"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Expiry Date</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="expiry_date"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Spice level</ion-label>
+      <ion-range [(ngModel)]="spice_value" color="danger" pin="true"></ion-range>
+    </ion-item>
+  </ion-list>
+    <div>
+      <ion-row responsive-sm>
+        <ion-col>
+          <button  block ion-button item-left (click)="takepic()"> <ion-icon name="camera"></ion-icon> Upload</button>
+        </ion-col>
+        <ion-col>
+          <button block ion-button item-left [navPush]="finalPage">Confirm</button>
+        </ion-col>
+        <ion-col>
+          <button block ion-button item-left  [disabled]="!title" (click)="get_info()">Get Info</button>
+        </ion-col>
+      </ion-row>
+    </div>
+</ion-content>

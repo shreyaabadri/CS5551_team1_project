@@ -1,0 +1,34 @@
+<!--
+  Generated template for the AboutusPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar hideBackButton color="dark">
+       <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>ABOUT US</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bg-about-image">
+<div padding>
+        <p style="text-align: center">
+    <ion-img style="width: 200px; height: 200px;" src="assets/img/logo.jpg"></ion-img>
+    </p>
+        <br>
+<p style="text-align: justify" >This application is developed to help people in need to find food locations where free food is available. Through our app you can find nearby stall locations and also contribute food.</p>
+        <br>
+    <br>
+    
+     <div padding>
+      <button block ion-button color="secondary" [navPush]="homepage" item-left>BACK TO HOME</button>
+    </div>
+    </div>
+    
+</ion-content>
