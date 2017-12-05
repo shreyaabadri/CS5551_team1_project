@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar hideBackButton color="new_menu">
+      <button ion-button  menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>REGISTER</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class='has-header bg-register-image'>
+  <form [formGroup]="todo" (submit)="registerUser()" padding class="bg-register-image" >
+      <ion-list>
+        <ion-item style='background-color: rgba(0, 0, 0, 0) !important; border: 0'>
+          <ion-label style='color: white !important' floating>Name</ion-label>
+          <ion-input  style='color: white !important' type="text" formControlName="name"></ion-input>
+        </ion-item>
+        <ion-item style='background-color: rgba(0, 0, 0, 0) !important'>
+          <ion-label style='color: white !important' floating>Email</ion-label>
+          <ion-input  style='color: white !important' type="email" formControlName="emaill"></ion-input>
+        </ion-item>
+        <ion-item style='background-color: rgba(0, 0, 0, 0) !important'>
+          <ion-label style='color: white !important' floating>Password</ion-label>
+          <ion-input  style='color: white !important' type="password" formControlName="passwordd"></ion-input>
+        </ion-item>
+        <ion-item style='background-color: rgba(0, 0, 0, 0) !important'>
+          <ion-label style='color: white !important' floating>Phone</ion-label>
+          <ion-input  style='color: white !important' type='number' formControlName="phone"></ion-input>
+        </ion-item>
+        <ion-item style='background-color: rgba(0, 0, 0, 0) !important'>
+          <ion-label style='color: white !important' floating>Address</ion-label>
+          <ion-input  style='color: white !important' type='text' formControlName="address"></ion-input>
+        </ion-item>
+        <ion-item style='background-color: rgba(0, 0, 0, 0) !important'>
+          <ion-label style='color: white !important' floating>Zipcode</ion-label>
+          <ion-input  style='color: white !important' type='text' formControlName="code"></ion-input>
+        </ion-item>
+        <ion-item style='background-color: rgba(0, 0, 0, 0) !important; border: 0'>
+          <ion-label style='color: white !important' floating>Role</ion-label>
+          <ion-select style='color: white !important' formControlName="role">
+            <ion-option style='color: white !important' *ngFor="let key of [{ title: 'User', role: 1 },{ title: 'Volunteer', role: 2 }]" value="{{key.role}}">{{key.title}}</ion-option>
+          </ion-select>
+        </ion-item>
+      <button ion-button block position="bottom" type="submit" item-left [disabled]="!todo.valid">Submit</button>
+      </ion-list>
+  </form>
+</ion-content>

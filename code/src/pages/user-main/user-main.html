@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar color="new_menu">
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>DASHBOARD</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="bg-um-image">
+  <ion-list>
+    <ion-item  style='background-color: rgba(0, 0, 0, 0) !important; border: rgba(0, 0, 0, 0);'>
+      <ion-label style='color: white' floating>Name</ion-label>
+      <ion-select style='color: white !important' [(ngModel)]="title" okText="Go Ahead" cancelText="Aiyoo">>
+        <ion-option *ngFor="let key of names" value="{{key.title}}">{{key.title}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item  style='background-color: rgba(0, 0, 0, 0) !important'>
+     <ion-label style='color: white' floating>Cuisine</ion-label>
+      <ion-select  style='color: white !important' [(ngModel)]="cuisine">
+        <ion-option *ngFor="let key of cuisine_names" value="{{key.title}}">{{key.title}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item  style='background-color: rgba(0, 0, 0, 0) !important'>
+     <ion-label style='color: white' floating>Preparation Date</ion-label>
+    <ion-datetime style='color: white !important' displayFormat="MM/DD/YYYY" [(ngModel)]="prep_date"></ion-datetime>
+    </ion-item>
+    <ion-item  style='background-color: rgba(0, 0, 0, 0) !important'>
+      <ion-label style='color: white' floating>Expiry Date</ion-label>
+      <ion-datetime style='color: white !important' displayFormat="MM/DD/YYYY" [(ngModel)]="expiry_date"></ion-datetime>
+    </ion-item>
+    <ion-item  style='background-color: rgba(0, 0, 0, 0) !important; border-bottom-color: rgba(0, 0, 0, 0);'>
+      <ion-label style='color: white' floating>Spice level : {{spice_value || 0}}</ion-label>
+      <ion-range style='color: white !important' [(ngModel)]="spice_value" color="danger" pin="true"></ion-range>
+    </ion-item>
+  </ion-list>
+    <div>
+      <ion-row responsive-sm>
+        <ion-col>
+          <button block ion-button item-left (click)="takepic()"> <ion-icon name="camera"></ion-icon> Upload</button>
+        </ion-col>
+        <ion-col>
+          <!-- <button block ion-button item-left  [disabled]="!title || !cuisine || !prep_date || !expiry_date || !spice_value" [navPush]="finalPage">Confirm</button>  -->
+          <button block ion-button item-left  [disabled]="!title || !cuisine || !prep_date || !expiry_date || !spice_value" (click)="place_order()">Confirm</button>
+
+        </ion-col>
+        <ion-col>
+          <button block ion-button item-left  [disabled]="!title" (click)="get_info()">Get Info</button>
+        </ion-col>
+      </ion-row>
+    </div>
+</ion-content>

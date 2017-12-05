@@ -1,0 +1,41 @@
+<!--
+  Generated template for the FeedbackPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar hideBackButton color="new_menu">
+       <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  
+    <ion-title>FEEDBACK</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bg-feedback-image">
+    <div padding>
+ <p style="text-align: justify; color: white">We would love to hear your thoughts and concerns with anything so we can improve. 
+    </p>
+        <ion-item style='background-color: rgba(0, 0, 0, 0)'>
+     <ion-label style='color: white' floating>Volunteer Name</ion-label>
+
+      <ion-select [(ngModel)]="nam" style='background-color: rgba(0, 0, 0, 0); color: white'>
+        <ion-option style='color: white' *ngFor="let key of names" value="{{key.title}}">{{key.title}}</ion-option>
+      </ion-select>
+    </ion-item>
+        <ion-item style='background-color: rgba(0, 0, 0, 0)'>
+     <ion-label style='color: white' floating>Rate our volunteers</ion-label>
+
+      <ion-select [(ngModel)]="rate" style='background-color: rgba(0, 0, 0, 0); color: white'>
+        <ion-option style='color: white' *ngFor="let key of ratings" value="{{key.title}}">{{key.title}}</ion-option>
+      </ion-select>
+            <br>
+    </ion-item>
+        <button ion-button [navPush]="usdash" type="submit" block>SUBMIT</button>
+   </div> 
+</ion-content>

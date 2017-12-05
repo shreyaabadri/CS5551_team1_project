@@ -1,0 +1,14 @@
+page-login {
+
+      .bg-login-image {
+        background-color: #03041a;
+		background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+        // background-repeat: no-repeat;
+        background-position: center;
+        background-size : cover;
+		display:flex;
+        height: 100%;
+    	flex-direction: column
+    };
+
+}

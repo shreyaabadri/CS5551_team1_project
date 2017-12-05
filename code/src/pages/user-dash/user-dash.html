@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-navbar hideBackButton color="new_menu">
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>DASHBOARD</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="page-user-dash">
+  <ion-content class='has-heading page-user-dash' >
+  <!--   <ion-item>
+      <ion-avatar item-left>
+        <img src="{{a}}">
+      </ion-avatar>
+        <h2>{{user_data['name']}}</h2>
+    </ion-item> -->
+<ion-label style=" color: white; font-size:30px;">Welcome {{user_data['name'] || titlecase}} !!</ion-label>
+      <br>
+  <ion-segment [(ngModel)]="relationship" color="primary">
+    <ion-segment-button tappable *ngFor='let tab of tabs ; let i = index ' value="{{tab}}" [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider  && ( this.SwipedTabsSlider.getActiveIndex() === i || (  tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }' (ionSelect)="onChange($event)">{{tab}}
+    </ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="relationship">
+       <ion-list *ngSwitchCase="'History'">
+        <ion-item *ngFor="let p of orders" style='background-color: rgba(0, 0, 0, 0) !important'>
+          <ion-label style=" color: white; "> Name </ion-label>
+          <ion-note item-right>
+            {{p['food_name']}} 
+           <ion-icon name="md-radio-button-on" *ngIf="p['picked_by'] == null"></ion-icon>
+          <ion-icon name="md-checkmark-circle-outline" *ngIf="p['picked_by'] != null"> </ion-icon>
+          </ion-note>
+        </ion-item> 
+       </ion-list>
+       <ion-list *ngSwitchCase="'Profile'">
+            <ion-item style='background-color: rgba(0, 0, 0, 0) !important' *ngIf='user_data'>
+              <ion-icon style='color: white !important' name="md-contact"></ion-icon>
+                    <ion-note item-right>
+                      {{user_data['name']}}
+                    </ion-note>
+            </ion-item>
+            <ion-item style='background-color: rgba(0, 0, 0, 0) !important' *ngIf='user_data'>
+            	<ion-icon style='color: white !important' name="md-mail"></ion-icon>
+                    <ion-note item-right>
+                      {{user_data['email']}}
+                    </ion-note>
+            </ion-item>
+            <ion-item style='background-color: rgba(0, 0, 0, 0) !important' *ngIf='user_data'>
+				      <ion-icon style='color: white !important' name="md-call"></ion-icon>
+                    <ion-note item-right>
+                      {{user_data['phone']}}
+                    </ion-note>
+            </ion-item>
+            <ion-item style='background-color: rgba(0, 0, 0, 0) !important' *ngIf='user_data'>
+            	<ion-icon style='color: white !important' name="md-home"></ion-icon>
+                    <ion-note item-right>
+                      {{user_data['address']}}
+                    </ion-note>
+            </ion-item>
+            <ion-item style='background-color: rgba(0, 0, 0, 0) !important' *ngIf='user_data'>
+            	<!-- <ion-icon name="md-home"></ion-icon> -->
+                    <ion-note item-right>
+                      {{user_data['code']}}
+                    </ion-note>
+            </ion-item>
+       </ion-list>
+</div>
+</ion-content>
+
+	<!-- here is our dynamic line  "indicator"-->
+	<div id='indicator' class="SwipedTabs-indicatorSegment" ></div>
+
+<button block ion-button [navPush]="hompage" color="new_color" item-left>BACK TO HOME</button>
+
+</ion-content>

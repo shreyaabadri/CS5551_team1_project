@@ -1,0 +1,52 @@
+<!--
+  Generated template for the VolunRegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar hideBackButton color="dark">
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>REGISTER</ion-title>
+     
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bg-vregister-image">
+     <ion-list>
+     <ion-item>
+        <ion-label floating>Name</ion-label>
+        <ion-input type="text" ></ion-input></ion-item>
+        <ion-item>
+        <ion-label floating>Email Address</ion-label>
+        <ion-input type="text" #uname></ion-input></ion-item>
+        <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" #pwd></ion-input></ion-item>
+        <ion-item>
+         <ion-label floating>Phone Number</ion-label>
+        <ion-input type="text" ></ion-input></ion-item>
+        <ion-item>
+         <ion-label floating>Address</ion-label>
+        <ion-input type="text" ></ion-input></ion-item>
+        <ion-item>
+         <ion-label floating>Apt/Suite/Unit</ion-label>
+        <ion-input type="text" ></ion-input></ion-item>
+         <ion-item>
+         <ion-label floating>Postal Code</ion-label>
+        <ion-input type="text" ></ion-input></ion-item>
+    </ion-list>
+    <div padding>
+     <button block ion-button item-left (click)="takepic()">TAKE PHOTO
+        </button> 
+        <img src="{{ picurl }}" />
+    <button block ion-button (click)="registerVolun()" item-left>REGISTER</button>
+      <button block ion-button color="secondary" [navPush]="volunpage" item-left>CANCEL</button>
+    </div>
+
+</ion-content>
